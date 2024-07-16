@@ -7,7 +7,7 @@ on:
       
 jobs:
   generate:
-    name: sync & generate & test
+    name: sync & generate 
     runs-on: [self-hosted, Windows]
     env:
       Win_Topaz_Location: 'C:\Users\sandhata\BMC\WorkbenchCLI'
@@ -67,14 +67,3 @@ jobs:
           echo "set id: ${{ steps.generate.outputs.set_id }}"
           echo "url: ${{ steps.generate.outputs.url }}"
           echo "assignment id: ${{ steps.generate.outputs.assignment_id }}"
-
-      - name: deploy
-        if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
-        uses: bmc-compuware/ispw-deploy@main
-        id: deploy
-        with:
-          ces_url: 'http://10.10.1.174:48226/'
-          ces_token: ${{ secrets.CES_TOKEN }}
-          srid: 'ISPT'
-          runtime_configuration: 'ISPT'
-          deploy_automatically: ${{ steps.sync.outputs.automaticBuildJson }}     
