@@ -4,6 +4,5 @@
        DATA DIVISION.                                                   00040001
        PROCEDURE DIVISION.                                              00060001
            DISPLAY 'HELLO WORLD'.                                       00070001
-           DISPLAY 'POPUP_india'.
            DISPLAY 'CODE UPDATE'
            STOP RUN.                                                    00080001
