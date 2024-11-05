@@ -5,4 +5,5 @@
        PROCEDURE DIVISION.                                              00060001
            DISPLAY 'HELLO WORLD'.                                       00070001
            DISPLAY 'CODE UPDATE'
+           DISPLAY 'UPDATE CODE'
            STOP RUN.                                                    00080001
